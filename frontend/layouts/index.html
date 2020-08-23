@@ -1,0 +1,33 @@
+{{ define "aside" }}
+<h3 class="heading text-4xl font-bold text-urge-600">College Covid Leaderboard</h3>
+<div class="content">
+    {{ .Content }}
+</div>
+{{ end }}
+
+{{ define "primary" }}
+{{ $colleges := where $.Site.RegularPages "Section" "college"}}
+{{ range $index, $college := $colleges }}
+    <a class="md:flex items-center py-2 justify-between" href="{{ $college.RelPermalink }}">
+        <div class="flex mb-1 md:mb-0 text-lg">
+            <span class="pr-2 font-bold">#{{add $index 1}}</span>
+            <span class="text-urge-600 font-bold">{{ $college.Title }}</span>
+        </div>
+        <div class="flex text-sm">
+            <div class="mr-8">
+                <p class="">Students</p>
+                <p class="font-semibold text-neutral-900">{{ $college.Params.population }}</p>
+            </div>
+            <div class="mr-8">
+                <p class="">Cases</p>
+                <p class="font-semibold text-neutral-900">230</p>
+            </div>
+            <div>
+                <p class="">COVID</p>
+                <p class="font-semibold text-neutral-900">12.5%</p>
+            </div>
+        </div>
+    </a>
+    <hr>
+{{ end }}
+{{ end }}

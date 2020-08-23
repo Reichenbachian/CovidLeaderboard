@@ -1,0 +1,9 @@
+{{ define "main" }}
+<main>
+  <section class="content mx-auto max-w-3xl">
+    <h1>{{ .Title }}</h1>
+    <p class="support">{{ .Date.Format "Jan 2, 2006" }}</p>
+    {{ .Content }}
+  </section>
+</main>
+{{ end }}

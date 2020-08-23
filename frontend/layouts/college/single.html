@@ -1,0 +1,14 @@
+{{ define "aside" }}
+{{ $cases := 10 }}
+<h1 class="heading text-3xl">{{ .Title }}</h1>
+<p class="label">With {{ $cases }} confirmed COVID cases ({{ mul (div $cases (.Param "population")) 100 }}% of the student population), {{ .Title }} ranks [todo: expand language].</p>
+<div class="content">
+    {{ .Content }}
+</div>
+{{ end }}
+
+{{ define "primary" }}
+
+(total cases, charts here)
+
+{{ end }}
